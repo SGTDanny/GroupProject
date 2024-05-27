@@ -56,7 +56,10 @@ button {
 button:hover {
     background-color: #deb375;
 }
-
+button.active {
+    background-color: #ffe100; /* Green background for selected button */
+    color: rgb(0, 0, 0);             /* White text for selected button */
+}
 #submitSection {
     display: none;
 }

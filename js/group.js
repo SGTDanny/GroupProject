@@ -1,4 +1,7 @@
-let selections = [];let topPieces = {
+//array for the selections that the user Makes 
+let selections = [];
+//Global variables for all of the outfits possible
+let topPieces = {
     'Formal': 'blazerImageLink',
     'Semi-Formal': 'semiFormalShirtImageLink',
     'Party': 'tShirtImageLink',
@@ -38,39 +41,80 @@ let shoes = {
     'Beach Outing': 'sandalsImageLink'
 };
 
-function main() {   
+function main() {
+    let reset = false; 
     $(document).ready(function() {
         var selectedOccasion = '';
         var selectedTime = '';
         var selectedSeason = '';
 
+        //handling data when buttons from each section is clicked 
         $('#occassion button').on('click', function() {
+            resetSelections();
             selectedOccasion = $(this).text();
+            //adding clicked value to selection array
             selections.push(selectedOccasion);
             console.log('Selected Occasion: ' + selectedOccasion);
-            checkSelections();
-        });
 
+            setActiveButton('#occassion', this);
+
+            //funciton call look scroll to see the function explanation ..repeated
+            checkSelections();
+
+        });
         $('#time button').on('click', function() {
             selectedTime = $(this).text();
+
+            //adding clicked value to selection array
             selections.push(selectedTime);
+
             console.log('Selected Time: ' + selectedTime);
+
+            setActiveButton('#time', this);
+
+            //..repeated function call 
             checkSelections();
         });
 
         $('#season button').on('click', function() {
             selectedSeason = $(this).text();
+
+            //adding clicked value to selection array
             selections.push(selectedSeason);
             console.log('Selected Season: ' + selectedSeason);
+
+            setActiveButton('#season', this);
+
+            //..repeated function call 
             checkSelections();
         });
     });
+
     $('#submitButton').on('click', function() {
         showOutfit();
     });
+
+    $('#resetButton').on('click', function() {
+        resetSelections();
+    });
+    
     
 }
 
+function resetSelections() {
+    selections = [];
+    $('#submitSection').hide();
+    $('#output').empty();
+    $('button').removeClass('active');
+    console.log('Selections have been reset.');
+}
+
+function setActiveButton(sectionId, button) {
+    // Remove the active class from all buttons in the section
+    $(sectionId + ' button').removeClass('active');
+    // Add the active class to the clicked button
+    $(button).addClass('active');
+}
 //this function is to make sure all the selections have been made.
 //after the selections are selected then it will create the submit button
 function checkSelections() {
@@ -81,6 +125,10 @@ function checkSelections() {
        if (selectedOccasion && selectedTime && selectedSeason) {
             $('#submitSection').show(); // Show the submit section
         }
+
+    }
+    if(selections.length<3){
+        $('#submitSection').hide();
     }
 }
 
