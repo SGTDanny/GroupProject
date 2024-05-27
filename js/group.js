@@ -65,6 +65,10 @@ function main() {
             checkSelections();
         });
     });
+    $('#submitButton').on('click', function() {
+        showOutfit();
+    });
+    
 }
 
 //this function is to make sure all the selections have been made.
@@ -74,19 +78,8 @@ function checkSelections() {
         let selectedOccasion = selections.find(sel => Object.keys(topPieces).includes(sel));
         let selectedTime = selections.find(sel => sel === 'Indoors' || sel === 'Outdoors');
         let selectedSeason = selections.find(sel => sel === 'Summer' || sel === 'Spring' || sel === 'Winter' || sel === 'Fall');
-
-        if (selectedOccasion && selectedTime && selectedSeason) {
-            if ($('#submitButton').length === 0) { // Check if the button already exists
-                var $button = $('<button>', 
-                {
-                    text: 'Show Me My Fit',    // Button text
-                    id: 'submitButton',      // Button id
-                    click: function() {  // Click event handler
-                        showOutfit();
-                    }
-                });
-                $('#submitDiv').append($button);
-            }
+       if (selectedOccasion && selectedTime && selectedSeason) {
+            $('#submitSection').show(); // Show the submit section
         }
     }
 }

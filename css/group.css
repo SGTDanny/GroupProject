@@ -56,3 +56,7 @@ button {
 button:hover {
     background-color: #deb375;
 }
+
+#submitSection {
+    display: none;
+}
