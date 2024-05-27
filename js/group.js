@@ -1,45 +1,40 @@
-let selections = [];
-let topPieces = {
+let selections = [];let topPieces = {
     'Formal': 'blazerImageLink',
+    'Semi-Formal': 'semiFormalShirtImageLink',
     'Party': 'tShirtImageLink',
     'School': 'sweaterImageLink',
-    'Interview': 'buttonUpImageLink',
+    'Gym': 'gymShirtImageLink',
     'Date Night': 'niceTopImageLink',
-    'Meeting the Parents': 'casualTopImageLink',
-    'Office Work': 'formalTopImageLink',
     'Beach Outing': 'tankTopImageLink'
 };
 
 let singleFits = {
     'Formal': 'suitImageLink',
+    'Semi-Formal': 'semiFormalSuitImageLink',
     'Party': 'partyDressImageLink',
     'School': 'schoolUniformImageLink',
-    'Interview': 'businessSuitImageLink',
+    'Gym': 'gymOutfitImageLink',
     'Date Night': 'dateDressImageLink',
-    'Meeting the Parents': 'casualDressImageLink',
-    'Office Work': 'officeOutfitImageLink',
     'Beach Outing': 'beachWearImageLink'
 };
 
 let bottoms = {
     'Formal': 'formalPantsImageLink',
+    'Semi-Formal': 'semiFormalPantsImageLink',
     'Party': 'jeansImageLink',
     'School': 'skirtImageLink',
-    'Interview': 'formalSkirtImageLink',
+    'Gym': 'gymShortsImageLink',
     'Date Night': 'casualPantsImageLink',
-    'Meeting the Parents': 'comfortablePantsImageLink',
-    'Office Work': 'dressPantsImageLink',
     'Beach Outing': 'shortsImageLink'
 };
 
 let shoes = {
     'Formal': 'formalShoesImageLink',
+    'Semi-Formal': 'semiFormalShoesImageLink',
     'Party': 'jordansImageLink',
     'School': 'vansImageLink',
-    'Interview': 'calvinKleinImageLink',
+    'Gym': 'gymShoesImageLink',
     'Date Night': 'redBottomsImageLink',
-    'Meeting the Parents': 'nikeImageLink',
-    'Office Work': 'blackSketchersImageLink',
     'Beach Outing': 'sandalsImageLink'
 };
 
