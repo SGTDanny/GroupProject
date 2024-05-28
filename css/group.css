@@ -66,6 +66,9 @@ button.active {
     display: none;
     text-align:center;
 }
+#submitButton:active {
+    background-color: rgb(98, 78, 72); 
+}
 
 .opaque-box {
     border: 6px solid rgba(246, 218, 187, 0.7); 
