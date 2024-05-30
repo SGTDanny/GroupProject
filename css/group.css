@@ -45,19 +45,23 @@ h2 {
 
 button {
     margin: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 20px 40px;
+    font-size: 24px;
     color: #e5d9d4;
     background-color: rgb(143, 115, 105);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, font-size 0.5s ease, padding 0.5s ease;
 }
 
 button:hover {
     background-color: #deb375;
+    font-size: 2.0rem;
+    padding: 30px 60px;
+    transition-duration: .5s; //*adjust this value to slow or speed up button growing transition animation */
 }
+
 button.active {
     background-color: rgb(98, 78, 72); 
     color: #e5d9d4;
