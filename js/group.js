@@ -2,52 +2,54 @@
 let selections = [];
 //Global variables for all of the outfits possible
 let topPieces = {
-    'Formal': 'blazerImageLink',
-    'Semi-Formal': 'semiFormalShirtImageLink',
-    'Party': 'tShirtImageLink',
-    'School': 'sweaterImageLink',
-    'Gym': 'gymShirtImageLink',
-    'Date Night': 'niceTopImageLink',
-    'Beach Outing': 'tankTopImageLink'
+    'Formal': 'img/topPieces/Blazer.png',
+    'Semi-Formal': 'img/topPieces/semi-formal.png',
+    'Party': 'img/topPieces/tshirt_8413944.png',
+    'School': 'sweater',
+    'Gym': 'img/topPieces/gym-shirt.png',
+    'Date Night': 'img/singleFits/date-night-dress.png',
+    'Beach Outing': 'img/singleFits/beach-wear.png'
 };
 
 let singleFits = {
-    'Formal': 'suitImageLink',
-    'Semi-Formal': 'semiFormalSuitImageLink',
-    'Party': 'partyDressImageLink',
-    'School': 'schoolUniformImageLink',
-    'Gym': 'gymOutfitImageLink',
-    'Date Night': 'dateDressImageLink',
-    'Beach Outing': 'beachWearImageLink'
+    'Formal': 'img/singleFits/formal-suit.png',
+    'Semi-Formal': 'semiFormalSuit',
+    'Party': 'img/singleFits/party-dress.png',
+    'School': 'schoolUniform',
+    'Gym': 'img/singleFits/gym-outfit.png',
+    'Date Night': 'img/singleFits/date-night-dress.png',
+    'Beach Outing': 'img/singleFits/beach-wear.png'
 };
 
 let bottoms = {
-    'Formal': 'formalPantsImageLink',
-    'Semi-Formal': 'semiFormalPantsImageLink',
-    'Party': 'jeansImageLink',
-    'School': 'skirtImageLink',
-    'Gym': 'gymShortsImageLink',
-    'Date Night': 'casualPantsImageLink',
-    'Beach Outing': 'shortsImageLink'
+    'Formal': 'formalPants',
+    'Semi-Formal': 'semiFormalPants',
+    'Party': 'jeans',
+    'School': 'skirt',
+    'Gym': 'gymShorts',
+    'Date Night': 'casualPants',
+    'Beach Outing': 'shorts'
 };
 
 let shoes = {
-    'Formal': 'formalShoesImageLink',
-    'Semi-Formal': 'semiFormalShoesImageLink',
-    'Party': 'jordansImageLink',
-    'School': 'vansImageLink',
-    'Gym': 'gymShoesImageLink',
-    'Date Night': 'redBottomsImageLink',
-    'Beach Outing': 'sandalsImageLink'
+    'Formal': 'formalShoes',
+    'Semi-Formal': 'semiFormalShoes',
+    'Party': 'jordans',
+    'School': 'vans',
+    'Gym': 'gymShoes',
+    'Date Night': 'redBottoms',
+    'Beach Outing': 'sandals'
 };
 
-function main() {
+
+
+function main() 
+{
     let reset = false; 
     $(document).ready(function() {
         var selectedOccasion = '';
         var selectedTime = '';
         var selectedSeason = '';
-
         //handling data when buttons from each section is clicked 
         $('#occassion button').on('click', function() {
             resetSelections();
@@ -97,6 +99,12 @@ function main() {
     $('#resetButton').on('click', function() {
         resetSelections();
     });
+    $(document).ready(function() {
+        $('#occassion button').on('click', function() {
+            const query = $(this).text();
+            getClothingImage(query);
+        });
+    });
     
     
 }
@@ -134,31 +142,123 @@ function checkSelections() {
 
 function showOutfit() {
     let selectedOccasion = selections.find(sel => Object.keys(topPieces).includes(sel));
+    console.log(selectedOccasion);
     let outfit = {
         top: topPieces[selectedOccasion],
         fit: singleFits[selectedOccasion],
         bottom: bottoms[selectedOccasion],
         shoes: shoes[selectedOccasion]
-    };
-
-
+    }; 
+    // const queryTop = outfit.top;
+    // getClothingImage(queryTop);
     //uncomment this once all of the fits have links 
+    $('#output').html(`
+        <h2>Your Outfit</h2>
+        <img src="${outfit.top}" alt="Top">
+        <img src="${outfit.fit}" alt="Fit">
+        <img src="${outfit.bottom}" alt="Bottom">
+        <img src="${outfit.shoes}" alt="Shoes">
+    `);
+}
+
+    //comment this out once the fits have links to images
     // $('#output').html(`
     //     <h2>Your Outfit</h2>
-    //     <img src="${outfit.top}" alt="Top">
-    //     <img src="${outfit.fit}" alt="Fit">
-    //     <img src="${outfit.bottom}" alt="Bottom">
-    //     <img src="${outfit.shoes}" alt="Shoes">
+    //     <p>${outfit.top}</p>
+    //     <p>${outfit.fit}</p>
+    //     <p>${outfit.bottom}</p>
+    //     <p>${outfit.shoes}</p>
     // `);
 // }
 
-    //comment this out once the fits have links to images
-    $('#output').html(`
-        <h2>Your Outfit</h2>
-        <p>${outfit.top}</p>
-        <p>${outfit.fit}</p>
-        <p>${outfit.bottom}</p>
-        <p>${outfit.shoes}</p>
-    `);
-}
+/**
+ * 
+ * 
+ * 
+ * REMOVE ME AND ADD THE KEY
+ * 
+ * 
+ * **/
+// function getClothingImage(query) {
+//     $.ajax({
+//         url: `https://api.unsplash.com/search/photos?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}`,
+//         method: 'GET',
+//         success: function(data) {
+//             if (data.results.length > 0) {
+//                 const imageUrl = data.results[0].urls.small;
+//                 $('#output').html(`<img src="${imageUrl}" alt="${query}">`);
+//             } else {
+//                 $('#output').html('<p>No images found</p>');
+//             }
+//         },
+//         error: function( error) {
+//             console.error('Error fetching image:', error);
+//             $('#output').html('<p>Error fetching image</p>');
+//         }
+//     });
+// }
+// function getClothingImage2(query, callback) {
+//     $.ajax({
+//         url: `https://api.unsplash.com/search/photos?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}`,
+//         method: 'GET',
+//         success: function(data) {
+//             if (data.results.length > 0) {
+//                 const imageUrl = data.results[0].urls.small;
+//                 callback(imageUrl);
+//             } else {
+//                 callback(null);
+//             }
+//         },
+//         error: function(error) {
+//             console.error('Error fetching image:', error);
+//             callback(null);
+//         }
+//     });
+// }
+// function showOutfit2() {
+//     let selectedOccasion = selections.find(sel => Object.keys(topPieces).includes(sel));
+//     let outfit = {
+//         top: topPieces[selectedOccasion],
+//         fit: singleFits[selectedOccasion],
+//         bottom: bottoms[selectedOccasion],
+//         shoes: shoes[selectedOccasion]
+//     };
+
+//     $('#output').html('<h2>Your Outfit</h2>');
+
+//     // Fetch and display images for each piece of clothing
+//     getClothingImage2(outfit.top, function(topImage) {
+//         console.log(outfit.top);
+//         if (topImage) {
+//             $('#output').append(`<img src="${topImage}" alt="Top">`);
+//         } else {
+//             $('#output').append('<p>Top image not available</p>');
+//         }
+//     });
+
+//     getClothingImage2(outfit.fit, function(fitImage) {
+//         if (fitImage) {
+//             $('#output').append(`<img src="${fitImage}" alt="Fit">`);
+//         } else {
+//             $('#output').append('<p>Fit image not available</p>');
+//         }
+//     });
+
+//     getClothingImage2(outfit.bottom, function(bottomImage) {
+//         if (bottomImage) {
+//             $('#output').append(`<img src="${bottomImage}" alt="Bottom">`);
+//         } else {
+//             $('#output').append('<p>Bottom image not available</p>');
+//         }
+//     });
+
+//     getClothingImage2(outfit.shoes, function(shoesImage) {
+//         if (shoesImage) {
+//             $('#output').append(`<img src="${shoesImage}" alt="Shoes">`);
+//         } else {
+//             $('#output').append('<p>Shoes image not available</p>');
+//         }
+//     });
+// }
+
 main();
