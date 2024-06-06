@@ -179,7 +179,6 @@ function showOutfit() {
  * 
  * 
  * **/
-// const UNSPLASH_ACCESS_KEY = '81Y7tlCMuWuFY5rxjlVpeJq4G7PfNwlQT1obAJwLkHA'; // Replace with your Unsplash API key
 // function getClothingImage(query) {
 //     $.ajax({
 //         url: `https://api.unsplash.com/search/photos?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}`,
