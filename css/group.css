@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url(https://i.imgur.com/2deGtPS.png) no-repeat center center fixed;
+    background: url(https://i.imgur.com/3bFddRr.png) no-repeat center center fixed;
     background-size: cover;
 
 }
@@ -21,12 +21,12 @@ body {
 
 h1 {
     font-size: 60px;
-    color: #333;
+    color: #eeeeee;
 }
 
 p {
     font-size: 24px;
-    color: #666;
+    color: #ebebeb;
 }
 
 .centered-column {
@@ -39,7 +39,7 @@ p {
 
 h2 {
     font-size: 24px;
-    color: #333;
+    color: #ededed;
     text-align: center
 }
 
