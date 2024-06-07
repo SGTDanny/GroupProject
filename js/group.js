@@ -5,7 +5,7 @@ let topPieces = {
     'Formal': 'img/topPieces/Blazer.png',
     'Semi-Formal': 'img/topPieces/semi-formal.png',
     'Party': 'img/topPieces/tshirt_8413944.png',
-    'School': 'sweater',
+    'School': 'img/topPieces/sweater.png',
     'Gym': 'img/topPieces/gym-shirt.png',
     'Date Night': 'img/singleFits/date-night-dress.png',
     'Beach Outing': 'img/singleFits/beach-wear.png'
@@ -13,22 +13,22 @@ let topPieces = {
 
 let singleFits = {
     'Formal': 'img/singleFits/formal-suit.png',
-    'Semi-Formal': 'semiFormalSuit',
+    'Semi-Formal': 'img/singleFits/semi-formal-suit.png',
     'Party': 'img/singleFits/party-dress.png',
-    'School': 'schoolUniform',
+    'School': 'img/singleFits/school-uniform.png',
     'Gym': 'img/singleFits/gym-outfit.png',
     'Date Night': 'img/singleFits/date-night-dress.png',
     'Beach Outing': 'img/singleFits/beach-wear.png'
 };
 
 let bottoms = {
-    'Formal': 'formalPants',
-    'Semi-Formal': 'semiFormalPants',
-    'Party': 'jeans',
-    'School': 'skirt',
-    'Gym': 'gymShorts',
-    'Date Night': 'casualPants',
-    'Beach Outing': 'shorts'
+    'Formal': 'img/bottoms/formal-pants.png',
+    'Semi-Formal': 'img/bottoms/semiformal-pants.png',
+    'Party': 'img/bottoms/jeans.png',
+    'School': 'img/bottoms/skirt.png',
+    'Gym': 'img/bottoms/gym-shorts.png',
+    'Date Night': 'img/bottoms/casual-pants.png',
+    'Beach Outing': 'img/bottoms/shorts.png'
 };
 
 let shoes = {
