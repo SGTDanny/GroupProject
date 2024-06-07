@@ -19,6 +19,13 @@ body {
     margin-bottom: -80px; 
 }
 
+#intro img {
+    width: 1000px;
+    height: auto; 
+    margin-top: -250px;
+    margin-bottom: -100px;
+}
+
 h1 {
     font-size: 60px;
     color: #333;
@@ -103,3 +110,4 @@ button.active {
 #output {
     text-align: center; 
 }
+
