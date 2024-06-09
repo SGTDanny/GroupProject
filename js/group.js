@@ -32,13 +32,13 @@ let bottoms = {
 };
 
 let shoes = {
-    'Formal': 'formalShoes',
-    'Semi-Formal': 'semiFormalShoes',
-    'Party': 'jordans',
-    'School': 'vans',
-    'Gym': 'gymShoes',
-    'Date Night': 'redBottoms',
-    'Beach Outing': 'sandals'
+    'Formal': 'img/shoes/formal-shoes.png',
+    'Semi-Formal': 'img/shoes/semi-formal-shoes.png',
+    'Party': 'img/shoes/party-shoes.png',
+    'School': 'img/shoes/school-shoes.png',
+    'Gym': 'img/shoes/gym-shoes.img',
+    'Date Night': 'high-heels.img',
+    'Beach Outing': 'img/shoes/sandals.img'
 };
 
 
